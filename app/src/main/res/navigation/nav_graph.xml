@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <!-- Fragments del Bottom Navigation Bar -->
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.gabriel.jaya.emprendimiento.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.gabriel.jaya.emprendimiento.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/navigation_community"
+        android:name="com.gabriel.jaya.emprendimiento.CommunityFragment"
+        android:label="fragment_community"
+        tools:layout="@layout/fragment_community" />
+
+    <!-- He añadido un fragment de perfil aquí, necesitas crear su clase también -->
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.gabriel.jaya.emprendimiento.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <!-- He omitido el de notificaciones por ahora, puedes añadirlo después -->
+
+
+    <!-- Fragments de Detalle (a los que se navega desde otros fragments) -->
+    <fragment
+        android:id="@+id/parkDetailFragment"
+        android:name="com.gabriel.jaya.emprendimiento.ParkDetailFragment"
+        android:label="ParkDetailFragment"
+        tools:layout="@layout/fragment_park_detail" >
+        <!-- Acción para ir desde el detalle del parque al detalle del árbol -->
+        <action
+            android:id="@+id/action_parkDetailFragment_to_treeDetailFragment"
+            app:destination="@id/treeDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/treeDetailFragment"
+        android:name="com.gabriel.jaya.emprendimiento.TreeDetailFragment"
+        android:label="TreeDetailFragment"
+        tools:layout="@layout/fragment_tree_detail" />
+
+    <!--
+       Acciones Globales: Permiten navegar a estas pantallas desde CUALQUIER LUGAR de la app.
+       Es muy útil para no tener que definir la misma flecha de navegación 10 veces.
+    -->
+    <action android:id="@+id/action_global_parkDetailFragment" app:destination="@id/parkDetailFragment"/>
+    <action android:id="@+id/action_global_treeDetailFragment" app:destination="@id/treeDetailFragment"/>
+
+</navigation>

@@ -22,8 +22,8 @@ class ProfilePostsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val userPosts = listOf(
-            Post( "Monica", "url_avatar_monica", "3 min ago", "Quito",
-                "Cuidemos nuestros espacios verdes.", "url_imagen_basura", 21, 4)
+            Post( "Monica", R.drawable.avatar_monica, "3 min ago", "Quito",
+                "Cuidemos nuestros espacios verdes.", R.drawable.arbol_frutal, 21, 4)
         )
         binding.rvProfilePosts.layoutManager = LinearLayoutManager(context)
         binding.rvProfilePosts.adapter = PostAdapter(userPosts)

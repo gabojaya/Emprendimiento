@@ -5,9 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.gabriel.jaya.emprendimiento.databinding.ItemTreeBinding
-import com.gabriel.jaya.emprendimiento.Tree
 
-class TreeAdapter(private val trees: List<Tree>) : RecyclerView.Adapter<TreeAdapter.TreeViewHolder>() {
+class TreeAdapter(private val trees: List<Tree>, param: (Any) -> Unit) : RecyclerView.Adapter<TreeAdapter.TreeViewHolder>() {
 
     inner class TreeViewHolder(val binding: ItemTreeBinding) : RecyclerView.ViewHolder(binding.root)
 

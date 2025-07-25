@@ -7,10 +7,8 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.gabriel.jaya.emprendimiento.R
-import com.gabriel.jaya.emprendimiento.TreeAdapter
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.gabriel.jaya.emprendimiento.databinding.FragmentParkDetailBinding
-import com.gabriel.jaya.emprendimiento.Tree
 
 class ParkDetailFragment : Fragment() {
 
@@ -49,9 +47,9 @@ class ParkDetailFragment : Fragment() {
 
         val treeAdapter = TreeAdapter(dummyTrees) { tree ->
             // Acción al hacer clic en un árbol: navegar al detalle del árbol
-            findNavController().navigate(R.id.action_global_treeDetailFragment)
-        }
-
+            findNavController().navigate(R.id.action_parkDetailFragment_to_treeDetailFragment)
+       }
+        binding.rvTrees.layoutManager = LinearLayoutManager(context)
         binding.rvTrees.adapter = treeAdapter
     }
 

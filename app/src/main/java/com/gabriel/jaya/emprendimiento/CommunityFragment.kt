@@ -25,15 +25,10 @@ class CommunityFragment : Fragment() {
 
         // Datos de ejemplo
         val dummyPosts = listOf(
-            Post(
-                "Monica", "url_avatar_monica", "3 min ago", "Quito",
-                "Cuidemos nuestros espacios verdes.", "url_imagen_basura", 21, 4
-            ),
-            Post(
-                "Daniel", "url_avatar_daniel", "2 hrs ago", "Quito",
-                "\"Cada pequeña acción cuenta: cuida hoy el planeta y estarás construyendo el futuro que quieres ver.\"",
-                null, 6, 18
-            )
+            Post( "Monica", R.drawable.avatar_monica, "3 min ago", "Quito",
+                "Cuidemos nuestros espacios verdes.", R.drawable.arbol_frutal, 21, 4),
+            Post( "Daniel", R.drawable.avatar_monica, "2 hrs ago", "Quito",
+                "...", null, 6, 18)
         )
 
         binding.rvPosts.layoutManager = LinearLayoutManager(context)

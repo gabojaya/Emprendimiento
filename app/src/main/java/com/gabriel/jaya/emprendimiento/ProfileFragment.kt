@@ -5,15 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.gabriel.jaya.emprendimiento.databinding.FragmentProfileBinding
+import com.gabriel.jaya.emprendimiento.databinding.FragmentProfilePostsBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
+// --- CLASE PRINCIPAL DEL PERFIL ---
 class ProfileFragment : Fragment() {
-
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
-    private lateinit var profilePagerAdapter: ProfilePagerAdapter
 
     override fun onCreateView(inflater: LayoutInflater, c: ViewGroup?, b: Bundle?): View {
         _binding = FragmentProfileBinding.inflate(inflater, c, false)
@@ -22,10 +23,8 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        profilePagerAdapter = ProfilePagerAdapter(this)
+        val profilePagerAdapter = ProfilePagerAdapter(this)
         binding.viewPager.adapter = profilePagerAdapter
-
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = when (position) {
                 0 -> "Parques"
@@ -36,24 +35,37 @@ class ProfileFragment : Fragment() {
             }
         }.attach()
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 }
 
-// Adaptador para el ViewPager
+// --- ADAPTADOR CORREGIDO ---
 class ProfilePagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int = 4
 
     override fun createFragment(position: Int): Fragment {
-        // Devuelve un nuevo fragment para cada tab
-        // Por simplicidad, podemos usar el mismo fragment de publicaciones para el ejemplo
-        // En una app real, crearías ProfileParksFragment, ProfileTreesFragment, etc.
+        // AHORA SÍ DEVOLVEMOS FRAGMENTS REALES
         return when (position) {
-            1 -> ProfilePostsFragment() // El que se ve en la imagen
-            else -> PlaceholderFragment.newInstance(position) // Fragments de ejemplo
+            1 -> ProfilePostsFragment() // Tu fragment de publicaciones
+            else -> PlaceholderFragment.newInstance(position) // Un fragment genérico para las otras tabs
+        }
+    }
+}
+
+// --- FRAGMENT GENÉRICO (Añade esta clase al final del archivo o en uno nuevo) ---
+class PlaceholderFragment : Fragment() {
+    // Puedes mejorar esto para que muestre un texto diferente según la pestaña
+    override fun onCreateView(inflater: LayoutInflater, c: ViewGroup?, b: Bundle?): View {
+        // Por ahora, solo devolvemos una vista vacía para que no crashee.
+        // En una app real, aquí irían los RecyclerViews de Parques, Árboles, etc.
+        return View(context)
+    }
+
+    companion object {
+        fun newInstance(position: Int): PlaceholderFragment {
+            return PlaceholderFragment()
         }
     }
 }

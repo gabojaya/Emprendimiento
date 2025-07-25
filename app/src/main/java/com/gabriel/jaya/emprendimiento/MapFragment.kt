@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.gabriel.jaya.emprendimiento
 import com.gabriel.jaya.emprendimiento.databinding.FragmentMapBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -32,9 +31,16 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
+        val navigateToParkDetail = {
+            findNavController().navigate(R.id.action_global_parkDetailFragment)
+        }
+
         binding.bottomSheet.setOnClickListener {
             // Navegar a la pantalla de detalle del parque
-            findNavController().navigate(R.id.action_global_parkDetailFragment)
+            navigateToParkDetail()
+        }
+        binding.btnAdoptar.setOnClickListener {
+            findNavController().navigate(R.id.action_global_treeDetailFragment)
         }
     }
 
