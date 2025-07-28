@@ -27,7 +27,7 @@ class CommunityFragment : Fragment() {
         val dummyPosts = listOf(
             Post( "Monica", R.drawable.avatar_monica, "3 min ago", "Quito",
                 "Cuidemos nuestros espacios verdes.", R.drawable.arbol_frutal, 21, 4),
-            Post( "Daniel", R.drawable.avatar_monica, "2 hrs ago", "Quito",
+            Post( "Daniel", R.drawable.avatar_daniel, "2 hrs ago", "Quito",
                 "...", null, 6, 18)
         )
 
