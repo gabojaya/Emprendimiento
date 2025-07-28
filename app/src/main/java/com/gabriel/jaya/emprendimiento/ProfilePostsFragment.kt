@@ -23,7 +23,8 @@ class ProfilePostsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val userPosts = listOf(
             Post( "Monica", R.drawable.avatar_monica, "3 min ago", "Quito",
-                "Cuidemos nuestros espacios verdes.", R.drawable.arbol_frutal, 21, 4)
+            "Cuidemos nuestros espacios verdes.", R.drawable.arbol_frutal, 21, 4)
+
         )
         binding.rvProfilePosts.layoutManager = LinearLayoutManager(context)
         binding.rvProfilePosts.adapter = PostAdapter(userPosts)

@@ -40,9 +40,9 @@ class ParkDetailFragment : Fragment() {
     private fun setupRecyclerView() {
         // Datos de ejemplo
         val dummyTrees = listOf(
-            Tree("1", "Árbol 1", "Categoría • árboles frutales", "Especificaciones del árbol", "url_de_imagen1"),
-            Tree("2", "Árbol 2", "Categoría • árboles de hoja perenne", "Especificaciones del árbol", "url_de_imagen2"),
-            Tree("3", "Árbol 3", "Categoría • árboles de coníferas", "Especificaciones del árbol", "url_de_imagen3")
+            Tree("1", "Árbol 1", "Categoría • árboles frutales", R.drawable.arbol_frutal, "url_de_imagen1"),
+            Tree("2", "Árbol 2", "Categoría • árboles de hoja perenne", R.drawable.arbol_frutal_2, "url_de_imagen2"),
+            Tree("3", "Árbol 3", "Categoría • árboles de coníferas", R.drawable.arbol_frutal, "url_de_imagen3")
         )
 
         val treeAdapter = TreeAdapter(dummyTrees) { tree ->

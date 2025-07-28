@@ -22,6 +22,10 @@ class LoginActivity : AppCompatActivity() {
             // Lógica de login con Google
             goToMainActivity()
         }
+        binding.btnApple.setOnClickListener {
+            // Lógica de login con Google
+            goToMainActivity()
+        }
     }
 
     private fun goToMainActivity() {

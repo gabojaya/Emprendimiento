@@ -58,7 +58,7 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
     // Google Maps (para la pantalla del mapa)
-    implementation("com.google.android.gms:play-services-maps:18.2.0")
+    implementation("org.osmdroid:osmdroid-android:6.1.18")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

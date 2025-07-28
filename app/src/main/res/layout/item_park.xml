@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:foregroundTint="#EBEBEB"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:rippleColor="#FBFBFB"
+    app:strokeColor="#E9DDDD">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_park_image"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/parque_los_tubos" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tv_park_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Parque de los Tubos"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_adoptar_park"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adoptar" />
+        </LinearLayout>
+
+        <!-- LÍNEAS NUEVAS AÑADIDAS -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="#E0E0E0" />
+
+        <Button
+            android:id="@+id/btn_ver_detalles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="4dp"
+            android:backgroundTint="#5C64CC"
+            android:text="Ver Detalles" />
+        <!-- FIN DE LAS LÍNEAS NUEVAS -->
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
